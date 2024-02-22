@@ -10,16 +10,18 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { phonebookReducer } from './phonebookReducer';
+import { contatsReducer, filterReducer } from './reducers';
 
 const persistConfig = {
   key: 'root',
   version: 1,
   storage,
+  blacklist: ['filter'],
 };
 
 const rootReducer = combineReducers({
-  phonebook: phonebookReducer,
+  contacts: contatsReducer,
+  filter: filterReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

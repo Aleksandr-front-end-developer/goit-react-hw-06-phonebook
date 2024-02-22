@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/phonebookReducer';
+import { useDispatch, useSelector } from 'react-redux';
+import { addContact } from '../../redux/reducers';
+import { handleContactsState } from '../../redux/selectors';
 
-export const Contactsform = ({ contacts, onSubmit }) => {
+export const Contactsform = () => {
+  const contacts = useSelector(handleContactsState);
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const dispatch = useDispatch();

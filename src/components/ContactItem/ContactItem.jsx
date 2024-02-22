@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { removeContact } from '../../redux/phonebookReducer';
+import { removeContact } from '../../redux/reducers';
 
 export const ContactItem = ({ contact: { name, number, id } }) => {
   const dispatch = useDispatch();
